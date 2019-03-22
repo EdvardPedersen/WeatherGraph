@@ -8,6 +8,7 @@ Saves the data to temperatures.bmp
 '''
 
 import sys
+import socket
 
 import pygame
 
@@ -82,6 +83,16 @@ class DisplayResult:
         self._update_scaling_factors()
         self._draw_screen()
 
+    def get_data(self):
+        s = socket.create_connection(('weather.cs.uit.no', 44102))
+        done = False
+        full_data = ""
+        while not done:
+            data = s.recv()
+            if data == "":
+                break
+            full_data = full_data + data
+        return full_data
 
 def mainloop():
     A = DisplayResult()
