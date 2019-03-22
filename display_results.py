@@ -10,6 +10,8 @@ Saves the data to temperatures.bmp
 import sys
 import socket
 
+import re
+
 import pygame
 
 class DisplayResult:
@@ -78,6 +80,10 @@ class DisplayResult:
         '''
         Add a new data point to the graph.
         '''
+        line = self.get_columns(self.strip_spaces(line))
+        if len(line) < 2:
+            return
+        print(len(line))
         self.points.append(self._get_datapoint(line))
         self._update_minmax_points(self.points[-1])
         self._update_scaling_factors()
@@ -88,15 +94,26 @@ class DisplayResult:
         done = False
         full_data = ""
         while not done:
-            data = s.recv()
+            data = s.recv(4096).decode('utf-8')
             if data == "":
                 break
             full_data = full_data + data
+
         return full_data
+
+    def strip_spaces(self, string):
+        return re.sub('  *', ' ', string)
+
+    def get_columns(self, input):
+        words = input.split(" ")
+        if len(words) < 2:
+            return ""
+        return words[0] + " " + words[1]
 
 def mainloop():
     A = DisplayResult()
-    for line in sys.stdin:
+    for line in A.get_data():
+        print(line)
         A.new_data(line)
     A.save_image("temperatures.bmp")
 
