@@ -52,6 +52,10 @@ class TestDisplay(unittest.TestCase):
         self.assertEqual(fc.recv_called, 2)
         self.assertEqual(expected_result, data)
 
+    def test_strip_spaces(self):
+        input_string = "hello   world    two"
+        output_string = "hello world two"
+        self.assertEqual(self.disp.strip_spaces(input_string), output_string)
 
 if __name__ == "__main__":
     unittest.main()
