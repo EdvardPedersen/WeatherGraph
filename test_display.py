@@ -57,5 +57,10 @@ class TestDisplay(unittest.TestCase):
         output_string = "hello world two"
         self.assertEqual(self.disp.strip_spaces(input_string), output_string)
 
+    def test_get_columns(self):
+        input_string = "c1 c2 c3 c4"
+        output_string = "c1 c2"
+        self.assertEqual(self.disp.get_columns(input_string), output_string)
+
 if __name__ == "__main__":
     unittest.main()

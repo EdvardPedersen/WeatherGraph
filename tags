@@ -1,0 +1,34 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_OUTPUT_MODE	u-ctags	/u-ctags or e-ctags/
+!_TAG_PROGRAM_AUTHOR	Universal Ctags Team	//
+!_TAG_PROGRAM_NAME	Universal Ctags	/Derived from Exuberant Ctags/
+!_TAG_PROGRAM_URL	https://ctags.io/	/official site/
+!_TAG_PROGRAM_VERSION	0.0.0	/45968eff/
+Components	README.md	/^## Components$/;"	s
+DisplayResult	display_results.py	/^class DisplayResult:$/;"	c
+FakeConnection	test_display.py	/^class FakeConnection:$/;"	c
+TestDisplay	test_display.py	/^class TestDisplay(unittest.TestCase):$/;"	c
+WeatherGrapher	README.md	/^# WeatherGrapher$/;"	c
+__init__	display_results.py	/^    def __init__(self):$/;"	m	class:DisplayResult
+__init__	test_display.py	/^    def __init__(self):$/;"	m	class:FakeConnection
+__next__	test_display.py	/^    def __next__(self):$/;"	m	class:FakeConnection
+_draw_screen	display_results.py	/^    def _draw_screen(self):$/;"	m	class:DisplayResult
+_get_datapoint	display_results.py	/^    def _get_datapoint(self, line):$/;"	m	class:DisplayResult
+_get_seconds	display_results.py	/^    def _get_seconds(self, time):$/;"	m	class:DisplayResult
+_update_minmax_points	display_results.py	/^    def _update_minmax_points(self, new_point):$/;"	m	class:DisplayResult
+_update_scaling_factors	display_results.py	/^    def _update_scaling_factors(self):$/;"	m	class:DisplayResult
+get_columns	display_results.py	/^    def get_columns(self, input):$/;"	m	class:DisplayResult
+get_data	display_results.py	/^    def get_data(self):$/;"	m	class:DisplayResult
+m	test_display.py	/^import unittest.mock as m$/;"	I
+mainloop	display_results.py	/^def mainloop():$/;"	f
+new_data	display_results.py	/^    def new_data(self, line):$/;"	m	class:DisplayResult
+recv	test_display.py	/^    def recv(self, *args):$/;"	m	class:FakeConnection
+save_image	display_results.py	/^    def save_image(self, filename):$/;"	m	class:DisplayResult
+setUp	test_display.py	/^    def setUp(self):$/;"	m	class:TestDisplay
+strip_spaces	display_results.py	/^    def strip_spaces(self, string):$/;"	m	class:DisplayResult
+test_get_columns	test_display.py	/^    def test_get_columns(self):$/;"	m	class:TestDisplay
+test_get_data	test_display.py	/^    def test_get_data(self, socket):$/;"	m	class:TestDisplay
+test_strip_spaces	test_display.py	/^    def test_strip_spaces(self):$/;"	m	class:TestDisplay
+test_update_points	test_display.py	/^    def test_update_points(self):$/;"	m	class:TestDisplay
+test_write_image	test_display.py	/^    def test_write_image(self):$/;"	m	class:TestDisplay
